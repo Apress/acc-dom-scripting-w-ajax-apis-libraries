@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>Logger</title>
+
+
+<style type="text/css">
+#logger {
+   width:300px;
+   height:300px;
+   overflow:scroll;
+   position:absolute;
+   left:5px; top:5px;
+   background-color:#FFF;
+}
+
+</style>
+<script type="text/javascript">
+
+function logger(str){
+   var el = document.getElementById('logger');
+   // if the logger container isn't found, create it
+   if(!el) {
+     el = document.createElement('div');
+     el.id = 'logger';
+     var doc = document.getElementsByTagName('body')[0];
+     doc.appendChild(el);
+   }
+   el.innerHTML += str + '<br>';
+}
+
+window.onload = function()
+{
+	var value = 5;
+	logger('value = ' + value);
+}
+
+
+</script>
+
+
+</head>
+<body>
+
+
+
+</body>
+</html>

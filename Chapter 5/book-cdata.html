@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>Books</title>
+
+<style type="text/css">
+body {
+  font-family:Arial,Helvetica,sans-serif;
+  }
+.book {
+  border-top:1px solid #CCC;
+  padding:10px 5px
+  }
+.book h2 {
+  margin:0;
+  font-size:1em;
+  }
+.book .author {
+  margin:0;
+  font-weight:bold;
+  font-size:.9em;
+  }
+.book p {
+  margin:0
+  }
+
+</style>
+<script type="text/javascript">
+
+window.onload = function()
+{
+	// Use the native version for everybody but IE6<
+	if(window.XMLHttpRequest) {
+	    transport = new XMLHttpRequest();
+	}else{
+	    try{ transport = new ActiveXObject("MSXML2.XMLHTTP.6.0");  }catch(e){}
+	    try{ transport = new ActiveXObject("MSXML2.XMLHTTP");  }catch(e){}
+	}
+
+	if(transport)
+	{
+	   transport.open("GET", "books-cdata.xml", true);
+	   transport.onreadystatechange = function(){
+		  if(transport.readyState == 4)
+		  {
+		    process()
+		  }
+		};
+
+	   transport.send();
+	}
+
+	function process()
+	{
+		var doc =  transport.responseXML.documentElement; // grabs the root node
+		var books = doc.getElementsByTagName('book'); // get all song nodes
+		var container = document.getElementById('books');
+		container.innerHTML = doc.firstChild.data;
+
+	}
+}
+
+
+</script>
+
+
+</head>
+<body>
+  <div id="books"></div>
+</body>
+</html>

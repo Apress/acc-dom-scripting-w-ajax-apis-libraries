@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>Toggler</title>
+
+
+<style type="text/css">
+
+.question {
+  font-weight:bold;
+  margin-top:10px;
+  cursor:pointer; /* use the same pointer as a link */
+}
+
+.answer {
+  /* must be overflow hidden to do the animation */
+  overflow:hidden;
+}
+
+</style>
+<script type="text/javascript" src="../Chapter%202/getElementsByClassName.js"></script>
+<script type="text/javascript" src="AnimationObject-callbacks.js"></script>
+<script type="text/javascript" src="TogglerObject.js"></script>
+
+<script type="text/javascript">
+window.onload = function(){
+
+	var els = getElementsByClassName(document, 'question');
+	for(var i=0;i<els.length;i++)
+	{
+	    new Toggler(els[i]);
+	}
+
+}
+</script>
+
+
+</head>
+<body>
+
+  <div class="question">Question 1</div>
+  <div class="answer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacus sapien, commodo sit amet, lobortis vel, adipiscing nec, magna. Nunc quis tellus ut lacus tempor gravida. </div>
+  <div class="question">Question 2</div>
+  <div class="answer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacus sapien, commodo sit amet, lobortis vel, adipiscing nec, magna. Nunc quis tellus ut lacus tempor gravida. </div>
+  <div class="question">Question 3</div>
+  <div class="answer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacus sapien, commodo sit amet, lobortis vel, adipiscing nec, magna. Nunc quis tellus ut lacus tempor gravida. </div>
+  <div class="question">Question 4</div>
+  <div class="answer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacus sapien, commodo sit amet, lobortis vel, adipiscing nec, magna. Nunc quis tellus ut lacus tempor gravida. </div>
+
+
+</body>
+</html>

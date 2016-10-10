@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" ~CCC
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Simple Match Game</title>
+
+<link rel="stylesheet" href="site.css" type="text/css">
+<style type="text/css">
+li {
+  padding:80px 20px;
+  width:200px;
+  list-style:none;
+  float:left;
+  border:1px solid blue;
+  text-align:center;
+  text-indent:-9999px;
+}
+li.flipped {
+  text-indent:0;
+}
+</style>
+<script type="text/javascript">
+
+var selectedPiece;
+var totalMatches = 4;
+var matchesFound = 0;
+function checkPiece(evt)
+{
+  var currentPiece;
+  evt = evt || window.event;
+  var target = evt.target || evt.srcElement;
+  currentPiece = target;
+
+  // I clicked on a flipped piece, just ignore this move
+  if(currentPiece.className == 'flipped') return;
+
+  // show the current piece
+  currentPiece.className = 'flipped';
+  // if I don't have a piece already selected, use this piece
+  if(!selectedPiece)
+  {
+    selectedPiece = currentPiece;
+    return; // I've done my move
+  }
+
+  if(selectedPiece.innerHTML == currentPiece.innerHTML)
+  {
+    matchesFound++;
+    if(matchesFound == totalMatches)
+    {
+      alert('You found them all! Great game!');
+    }else{
+      alert('good match!');
+    }
+  }else{
+    alert('sorry, not a match!');
+    // reset styles and the selected element
+    currentPiece.className = '';
+    selectedPiece.className = '';
+  }
+  selectedPiece = null; // reset selected
+}
+
+window.onload=function()
+{
+  var el = document.getElementById('pieces');
+  el.onclick = checkPiece;
+}
+</script>
+
+
+</head>
+<body>
+
+
+<ul id="pieces">
+  <li>Shark</li>
+  <li>Lion</li>
+  <li>Lion</li>
+  <li>Shark</li>
+  <li>Dolphin</li>
+  <li>Squirrel</li>
+  <li>Dolphin</li>
+  <li>Squirrel</li>
+</ul>
+
+
+</body>
+</html>

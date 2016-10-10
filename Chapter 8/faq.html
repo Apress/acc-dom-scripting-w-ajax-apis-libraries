@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Firebug FAQ</title>
+  <style type="text/css" media="screen">@import "firebug.css";</style></head><body>
+  <!--script type="text/javascript" src="dom-drag.js"></script>
+  <script type="text/javascript" src="jsTrace.js"></script-->
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="prototype.js"></script>
+  <script type="text/javascript" src="moo.fx.js"></script>
+  <script type="text/javascript" src="faq.js"></script>
+<div id="main">
+<img class="corner cornerTopLeft" src="images/blank.gif" alt="" />
+<img class="corner cornerTopRight" src="images/blank.gif" alt="" />
+
+<div id="topNav">
+    <div><a href="http://getfirebug.com/blog">blog</a></div>
+    <div><a href="http://groups.google.com/group/firebug">discuss</a></div>
+    <div><a href="http://getfirebug.com/contribute.html">contribute</a></div>
+    <div><a href="http://getfirebug.com/docs.html">documentation</a></div>
+</div>
+
+<a href="http://getfirebug.com/"><img class="header" src="images/header.png" alt="Firebug: Web Development Evolved" /></a>
+
+<div id="content">
+
+    <div class="columns">
+        <div class="fullColumn">
+            <br />
+            <h1>Frequently Asked Questions</h1>
+    <dl class="faq">
+      <dt><a href="#InstallDOMInspector">I am unable to see styles in the Style tab.  What is wrong?</a></dt>
+      <dd id="InstallDOMInspector">
+        <p>There are two possible reasons for this error. The first possibility is that you may not have not installed DOM Inspector. If so, you will need to re-install Firefox and choose DOM Inspector in the installer options.</p>
+        <p>Some users who already have DOM Inspector may experience this problem if they have upgraded Firefox from 1.5 to 2.0. I am not yet clear why, but an essential component that Firebug depends on is missing on these users' systems. Please read <a href="http://groups.google.com/group/firebug/browse_thread/thread/00b6a530059a7d1e/79a9fd41629ec0f9#79a9fd41629ec0f9">this topic</a> on the Firebug Discussion Group where many users have found a solution to the problem.</p>
+      </dd>
+      <dt><a href="#ConsoleLog">I want to use "console.log()", but it doesn't work in Internet Explorer or other browsers.  What can I do?</a></dt>
+      <dd id="ConsoleLog">
+        <p>You'll want to try <a href="http://getfirebug.com/lite.html">Firebug Lite</a>, a JavaScript library that embeds a simplified version of the Firebug console in your pages. This will allow all calls to functions of the console object to work in other browsers.</p>
+      </dd>
+      <dt><a href="#Sothink">Firebug crashes immediately when I try to open it.</a></dt>
+      <dd id="Sothink">
+        <p>The most likely cause for this is the <a href="http://www.sothink.com/product/swfcatcher/firefox/">Sothink SWF Catcher</a> extension.  If you have this extension installed, disabling it will allow Firebug to work properly.</p>
+        <p>The SWF Catcher is not compatible with Firefox 2.0, and causes some extensions like Firebug to crash.  Please <a href="http://www.sothink.com/contact.htm">contact Sothink</a> and ask that they fix their extension</p>
+      </dd>
+      <dt><a href="#Linux">Why doesn't Firebug work on Linux?</a></dt>
+      <dd id="Linux">
+        <p>Firebug does work on Linux, but some distributions don't compile Mozilla correctly, and it is missing the components that Firebug depends on. Even more common is the case of individual Linux users compiling their own Firefox binaries incorrectly.</p>
+        <p>If you compile your own Firefox, please read <a href="http://groups.google.com/group/firebug/browse_thread/thread/7c1a9c0886d98070/6791b68e3a829ceb">this topic</a> on the Firebug Discussion group for information how to make a Firebug-compatible build.</p>
+      </dd>
+      <dt><a href="#XMLHttpRequest">Why don't XMLHttpRequests work after using permissions manager to enable privileges?</a></dt>
+      <dd id="XMLHttpRequest">
+        <p>Unfortunately, there is a bug in Firebug that prevents enablePrivilege from allowing XMLHttpRequests to external domains.</p>
+        <p>To work around this problem, select "Disable Network Monitoring" from the Options menu in Firebug's Net tab.</p>
+      </dd>
+      <dt><a href="#EventsTab">In Firebug 0.4 there was an "Events" tab, but I can't find it in Firebug 1.0.</a></dt>
+      <dd id="EventsTab">
+        <p>The "Events" tab has been replaced with the ability to log events to the "Console" tab. Right click on an Element and you will see the "Log Events" menu item. Check that, and then you will see the events on the console.</p>
+      </dd>
+      <dt><a href="#ReturnTest">What happens when you link to another question from within one?</a></dt>
+      <dd id="ReturnTest">
+        <p>Let's <a href="#InstallDOMInspector">find out</a>.</p>
+      </dd>
+    </dl>
+            </div>
+        </div>
+
+        <div class="footer">
+        <p>Firebug is a free Firefox extension. <a href="http://getfirebug.com/#install">Ready to install?</a></p>
+        <p id="legal">Firebug is a registered trademark of <a href="http://www.parakey.com/">Parakey, Inc.</a></p>
+    </div>
+</div>
+
+</div>
+
+</body></html>
